@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="shortcut icon" href="favicon.ico">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<title>hagge.se - projects</title>
+    <style>
+
+		@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+
+		body {
+		  background-color: #4E453F;
+		  font-family: monospace;
+		  margin: 0;
+		  padding: 5px 30px 30px;
+		  font-size: 20px;
+		}
+
+		header {
+		  color: white;
+		  text-align: center;
+		  animation: moveInLeft 1s ease-out;
+		}
+
+		h1, h2, h3 {
+			font-family: 'Patua One', monospace;
+			font-weight: normal;
+			letter-spacing: 0.7px;
+		}
+
+		.grid {
+		   display: grid;
+		   grid-gap: 30px;
+		   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+		   grid-template-columns: repeat(1fr);
+		}
+
+		.flexy {
+			display: inline-flex;
+			flex-wrap: wrap;
+			overflow: hidden;
+			padding: 0 10px 10px;
+			text-align: center;
+			background-color: #555;
+			box-shadow: 0px 0px 22px rgba(1,1,1,0.5);
+			font-size: 15px;
+			color: whitesmoke;
+		}
+		.flexy * {
+			text-align: center;
+			width: 100%;
+		}
+		.flexy .icon {
+			font-size: 150px;
+			width: 100%;
+			padding: 15px;
+			margin: 10px;
+		}
+
+		.flexy a, .flexy a:visited {
+			color: lightblue;
+			font-size: 20px;
+		}
+
+		.flexy h2 { 
+			font-size: 35px;
+			background: #A5B995;
+			margin: 0 -10px;
+			padding: 30px 0;
+			width: calc(100% + 20px);
+		}
+
+		@keyframes moveInLeft {
+		  0% {
+		    opacity: 0;
+		    transform: translateX(-100px);
+		  }
+		  
+		  80% {
+		    transform: translateX(10px);
+		  }
+		  
+		  100% {
+		    opacity: 1;
+		    transform: translate(0);
+		  }
+		}
+	</style>
+  </head>
+  <body>
+	<header>
+	  <h1>hagge.se</h1>
+	  <p>A collection of random, small projects</p>
+	  </header>
+
+	<main class="grid">
+		<div class="flexy">
+		  <h2>Retro TV</h2>
+		  <div class="icon">📺</div>
+		  <p>Grabs movies from youtube and presents them as TV channels</p>
+		  <a href="https://broadcast-tube.herokuapp.com">broadcast-tube.herokuapp.com</a>
+		</div>
+		 
+		<div class="flexy">
+		  <h2>Local beers</h2>
+		  <div class="icon">🍺</div>
+		  <p>Lists new beers at your closest Systembolaget store</p>
+		  <a href="http://local-beers.herokuapp.com/">local-beers.herokuapp.com/</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Simple-news </h2>
+		  <div class="icon">📰</div>
+		  <p>A simple news feed aggregate</p>
+		  <a href="http://simple-news.herokuapp.com/">simple-news.herokuapp.com</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Calendar </h2>
+		  <div class="icon">📅</div>
+		  <p>Calendar with week numbers, name days, holidays and theme-days</p>
+		  <a href="http://kalendern.herokuapp.com/">kalendern.herokuapp.com</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Clock </h2>
+		  <div class="icon">🕙</div>
+		  <p>Clock, timers and world-time presented in various visual themes</p>
+		  <a href="https://vadarklockan.netlify.com/">vadarklockan.netlify.com/</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Code-quotes </h2>
+		  <div class="icon">💬</div>
+		  <p>Quotes from famous programmers displayed in an oversized style suitable for a TV screen at the office</p>
+		  <a href="https://codequotes.netlify.com/">codequotes.netlify.com</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>80s giforama </h2>
+		  <div class="icon">🕺🏻</div>
+		  <p>Plays an 80s song while funky gifs are displayed in the background</p>
+		  <a href="https://80s.netlify.com/">80s.netlify.com/</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Lyrics presenter</h2>
+		  <div class="icon">🎤</div>
+		  <p>Listen to "Burning down the house" by The Talking Heads with lyrics timed to the vocals</p>
+		  <a href="https://talkingheads.netlify.com/">talkingheads.netlify.com/</a>
+		</div>
+
+		<div class="flexy">
+		  <h2>Number lookup</h2>
+			<div class="icon">☎️</div>
+			<p>Look up a number on multiple 'yellow pages' sites at once</p>
+		  <a href="https://telefonnummer.netlify.com/">telefonnummer.netlify.com/</a>
+		</div>
+
+	</main>
+
+	<footer>
+	</footer>
+
+
+ </body>
+</html>
