@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
+
+<head>
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+	<link rel="stylesheet" href="animate-text-fill.css">
 	<title>hagge.se - projects</title>
-    <style>
+	<style>
+		@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
 
-		@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
-
+		a, a:link {
+			text-decoration: none; 
+		}
 
 		body {
-		  background-color: #4E453F;
-		  font-family: monospace;
-		  margin: 0;
-		  padding: 5px 30px 30px;
-		  font-size: 20px;
+			background-color: rgb(43, 39, 51);
+			font-family: monospace;
+			margin: 0;
+			padding: 5px 30px 30px;
+			font-size: 20px;
 		}
 
 		header {
-		  color: white;
-		  text-align: center;
-		  animation: moveInLeft 1s ease-out;
+			color: white;
+			text-align: center;
+			animation: moveInLeft 1s ease-out;
 		}
 
-		h1, h2, h3 {
-			font-family: 'Patua One', monospace;
+		h1,
+		h2,
+		h3 {
+			font-family: "Raleway", monospace;
 			font-weight: normal;
 			letter-spacing: 0.7px;
 		}
 
 		.grid {
-		   display: grid;
-		   grid-gap: 30px;
-		   grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-		   grid-template-columns: repeat(1fr);
+			display: grid;
+			grid-gap: 30px;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			grid-template-columns: repeat(1fr);
 		}
 
 		.flexy {
@@ -47,114 +54,137 @@
 			overflow: hidden;
 			padding: 0 10px 10px;
 			text-align: center;
-			background-color: #555;
-			box-shadow: 0px 0px 22px rgba(1,1,1,0.5);
+			box-shadow: 0px 0px 22px rgba(1, 1, 1, 0.5);
 			font-size: 15px;
 			color: whitesmoke;
 		}
+
 		.flexy * {
 			text-align: center;
 			width: 100%;
 		}
 
-		.flexy a, .flexy a:visited {
+		.flexy a,
+		.flexy a:visited {
 			color: lightblue;
 			font-size: 20px;
 		}
-
-		.flexy h2 { 
-			font-size: 35px;
-			background: rgb(218, 233, 194);
-			color: #222;
-			margin: 0 -10px;
-			padding: 10px 0;
-			width: calc(100% + 20px);
-			max-height: 50px; 
+		
+		.flexy h2 {
+			font-size: 40px;
 		}
 
 		@keyframes moveInLeft {
-		  0% {
-		    opacity: 0;
-		    transform: translateX(-100px);
-		  }
-		  
-		  80% {
-		    transform: translateX(10px);
-		  }
-		  
-		  100% {
-		    opacity: 1;
-		    transform: translate(0);
-		  }
+			0% {
+				opacity: 0;
+				transform: translateX(-100px);
+			}
+
+			80% {
+				transform: translateX(10px);
+			}
+
+			100% {
+				opacity: 1;
+				transform: translate(0);
+			}
 		}
 	</style>
-  </head>
-  <body>
+</head>
+
+<body>
 	<header>
-	  <h1>hagge.se</h1>
-	  <p>A collection of random, small projects</p>
-	  </header>
+		<h1 class="filled-text" style="--fill-color: gold; font-size: 50px;">hagge.se projects</h1>
+	</header>
 
 	<main class="grid">
-		<div class="flexy">
-		  <h2>📺 Retro TV</h2>
-		  <p>Grabs movies from youtube and presents them as TV channels</p>
-		  <a href="https://broadcast-tube.herokuapp.com">broadcast-tube.herokuapp.com</a>
-		</div>
-		 
-		<div class="flexy">
-		  <h2>🍺 New beers</h2>
-		  <p>Lists new beers at your closest Systembolaget store</p>
-		  <a href="http://local-beers.herokuapp.com/">local-beers.herokuapp.com</a>
-		</div>
 
-		<div class="flexy">
-		  <h2>📰 Newsfeed</h2>
-		  <p>A simple news feed aggregate</p>
-		  <a href="http://simple-news.herokuapp.com/">simple-news.herokuapp.com</a>
-		</div>
+		<a class="flexy" href="https://local-beers.herokuapp.com/">
+			<h2 class="filled-text">🍺 New beers</h2>
+			<p>Lists new beers at your closest Systembolaget store</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>📅 Swedish Calendar </h2>
-		  <p>Calendar with week numbers, name days, holidays and theme-days</p>
-		  <a href="http://kalendern.herokuapp.com/">kalendern.herokuapp.com</a>
-		</div>
+		<a class="flexy" href="/projects/tierList.html">
+			<h2 class="filled-text">📝 Tier List</h2>
+			<p>Rank Led Zeppelin's best albums in a Tier List</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>🕙 Fancy clock </h2>
-		  <p>Clock, timers and world-time presented in various visual themes</p>
-		  <a href="https://vadarklockan.netlify.com/">vadarklockan.netlify.com</a>
-		</div>
+		<a class="flexy" href="https://broadcast-tube.herokuapp.com">
+			<h2 class="filled-text">📺 Retro TV</h2>
+			<p>Grabs movies from youtube and presents them as TV channels</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>💬 Code-quotes </h2>
-		  <p>Quotes from famous programmers displayed in an oversized style suitable for a TV screen at the office</p>
-		  <a href="https://codequotes.netlify.com/">codequotes.netlify.com</a>
-		</div>
+		<a class="flexy" href="https://simple-news.herokuapp.com/">
+			<h2 class="filled-text">📰 Newsfeed</h2>
+			<p>A simple news feed aggregate</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>🕺🏻 80s giforama </h2>
-		  <p>Plays an 80s song while funky gifs are displayed in the background</p>
-		  <a href="https://80s.netlify.com/">80s.netlify.com/</a>
-		</div>
+		<a class="flexy" href="https://kalendern.herokuapp.com/">
+			<h2 class="filled-text">📅Calendar </h2>
+			<p>Calendar with week numbers, name days, holidays and theme-days</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>🎤 Lyrics presenter</h2>
-		  <p>Listen to "Burning down the house" by The Talking Heads with lyrics timed to the vocals</p>
-		  <a href="https://talkingheads.netlify.com/">talkingheads.netlify.com</a>
-		</div>
+		<a class="flexy" href="https://vadarklockan.netlify.com/">
+			<h2 class="filled-text">🕙 Clock </h2>
+			<p>Clock, timers and world-time presented in various visual themes</p>
+		</a>
 
-		<div class="flexy">
-		  <h2>☎️ Who called</h2>
+		<a class="flexy" href="https://codequotes.netlify.com/">
+			<h2 class="filled-text">💬 Code-quotes </h2>
+			<p>Quotes from famous programmers displayed in an oversized style suitable for a TV screen at the office</p>
+		</a>
+
+		<a class="flexy" href="https://80s.netlify.com/">
+			<h2 class="filled-text">🕺🏻 80s giforama </h2>
+			<p>Plays an 80s song while funky gifs are displayed in the background</p>
+		</a>
+
+		<a class="flexy" href="https://talkingheads.netlify.com/">
+			<h2 class="filled-text">🎤 Lyrics presenter</h2>
+			<p>Listen to "Burning down the house" by The Talking Heads with lyrics timed to the vocals</p>
+		</a>
+
+		<a class="flexy" href="https://vemringde.netlify.com/">
+			<h2 class="filled-text">☎️ Who called</h2>
 			<p>Look up a number on multiple 'yellow pages' sites at once</p>
-		  <a href="https://telefonnummer.netlify.com/">telefonnummer.netlify.com</a>
-		</div>
+		</a>
+
+		<a class="flexy" href="https://auto-hackertype.netlify.com/">
+			<h2 class="filled-text">⌨️ Hacker-type</h2>
+			<p>Pretend like you can write code really fast</p>
+		</a>
 
 	</main>
 
 	<footer>
 	</footer>
 
+	<script>
+		const h1 = document.querySelector("h1");
+		let percent = 40;
+		const MAX = 75;
+		const MIN = 40;
+		let direction = "up";
+		window.setInterval(() => {
+			console.log(percent);
 
- </body>
+			if (percent > MAX) {
+				direction = "down";
+			} 
+			else if (percent < MIN) {
+				direction = "up";
+			} 
+
+			if (direction === "up") {
+				percent++
+			} else {
+				percent--;
+			}
+
+			h1.style.backgroundSize = `${percent}%`;
+		}, 300);
+	</script>
+
+</body>
+
 </html>
