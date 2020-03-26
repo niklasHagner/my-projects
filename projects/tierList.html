@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      background-color: #232323;
+      font-family: Futura, Times, serif;
+      color: #1a1a1a;
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      justify-content: flex-start;
+      margin: 10px 0; 
+      padding: 0 20px;
+    }
+
+    .right-column {
+      text-align: center;
+      /* background-color: rgba(50,50,50,0.5); */
+      /* padding: 10px; */
+    }
+
+    .draggables {
+      height: 100%;
+      text-align: left;
+      padding-top: 2px; /* shouldnt be necessary but it looks off without it */
+    }
+    
+    .draggables .draggable {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .draggable {
+      width: 75px;
+      height: 75px;
+      cursor: grab;
+      background-size: cover;
+      margin-right: 5px;
+    }
+
+    .draggable.dragging, 
+    .draggable.dragging:active {
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      cursor: -o-grabbing;
+      cursor: -ms-grabbing;
+      cursor: grabbing;
+    }
+
+    .tier-list {
+      display: grid;
+      grid-template-rows: auto;
+      grid-gap: 10px;
+      flex-direction: column;
+      /* background-color: #1a1a1a; */
+    }
+
+    .tier-row {
+      display: flex;
+      width: 100%;
+      font-size: 20px;
+      background-color: black;
+    }
+
+    .tier-row .dropzone {
+      min-height: 75px; /* should be as tall as the draggable items*/
+      display: flex;
+      flex-wrap: wrap;
+      /* position: relative; */
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+    
+    .isdragging .dropzone {
+      box-shadow: 0 0 2px rgba(250,220,0, 0.2);
+    }
+    
+    .tier-row .tier {
+      margin-right: 5px;
+      background-color: #ff7f7f;
+      position: relative;
+      width: 75px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .tier-row .tier-s {
+      background-color: #ff7f7f;
+    }
+    .tier-row .tier-a {
+      background-color: #ffbf7f;
+    }
+    .tier-row .tier-b {
+      background-color: #ffff7f;
+    }
+    .tier-row .tier-c {
+      background-color: #7fff7f;
+    }
+    .tier-row .tier-d {
+      background-color: #7ebfff;
+    }
+    .tier-row .tier-e {
+      background-color: #807FFF;
+    }
+    .tier-row .tier-f {
+      background-color: #ff7fff;
+    }
+
+    footer {
+      width: 100vw;
+      padding: 10px;
+      margin-top: 10px;
+      text-align: center;
+      color: #eee;
+    }
+  </style>
+
+  <body>
+    
+   <main>
+    <article class="tier-list">
+      <section class='tier-row'> <div class='tier tier-s'>S</div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-a'>A </div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-b'>B </div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-c'>C </div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-d'>D </div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-e'>E </div> <div class='dropzone'></div></section>
+      <section class='tier-row'> <div class='tier tier-f'>F </div> <div class='dropzone'></div></section>
+    </article>
+    
+    <article class="right-column">
+      <div class="draggables" >
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/ceRoEQx5esxdw6GufnbTZ7-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://img.discogs.com/TKAx8CaR5AGGzVjHfQpIO_453YQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-1846223-1518900114-9116.jpeg.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/SWUPeQYjKoawgZuYaDhA4c-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/hDSRYtQLBXjwebggvz4aA8-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/7WMoQYEQroaKVRk2AwmUNF-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Led_Zeppelin_-_Houses_of_the_Holy.jpg/220px-Led_Zeppelin_-_Houses_of_the_Holy.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/tac2Vrs6Ajnp4RQ7aD8Yxe-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/3kHPcre6y9dDAXQLzUSFbQ-970-80.jpg')"></div>
+        <div class="draggable" style="background-image: url('https://cdn.mos.cms.futurecdn.net/jg4LuDc749FCJ2bAuNMDk4-970-80.jpg')"></div>
+        
+      </div>
+    </article>
+   </main>
+
+   <footer>
+     Build your tier list using drag-and-drop
+   </footer>
+
+    <script>
+      function onDragStart(ev) {
+        ev.dataTransfer.setData("draggedElementId", ev.currentTarget.getAttribute("id"));
+        ev.dataTransfer.dropEffect = "move";
+        ev.currentTarget.classList.add("dragging");
+        document.body.classList.add("isdragging");
+        // return false;
+      }
+
+      function onDragEnd(ev) {
+        ev.currentTarget.classList.remove("dragging");
+        document.body.classList.remove("isdragging");
+      }
+
+      function onDragOver(ev) {
+        ev.preventDefault();
+        ev.dataTransfer.dropEffect = "move";
+      }
+
+      function onDrop(ev) {
+        ev.preventDefault();
+        const draggableItemId = ev.dataTransfer.getData("draggedElementId");
+        const el = document.querySelector(`#${draggableItemId}`)
+        ev.currentTarget.appendChild(el);
+      }
+
+      const dropZones = [...document.querySelectorAll(".dropzone"), ...document.querySelectorAll(".draggables")];
+      dropZones.forEach((x) => {
+        x.addEventListener("drop", onDrop);
+        x.addEventListener("dragover", onDragOver);
+      });
+
+      const draggables = [...document.querySelectorAll(".draggable")];
+      draggables.forEach((x, i) => {
+        x.setAttribute("draggable", true);
+        x.setAttribute("id", "draggable"+i);
+        x.addEventListener("dragstart", onDragStart);
+        x.addEventListener("dragend", onDragEnd);
+      });
+    </script>
+  </body>
+</html>
