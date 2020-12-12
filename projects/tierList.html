@@ -2,130 +2,129 @@
 <html>
   <head>
     <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-    body {
-      background-color: #232323;
-      font-family: Futura, Times, serif;
-      color: #1a1a1a;
-      margin: 0;
-      padding: 0;
-    }
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+	  <style>
+	    body {
+	      background-color: #232323;
+	      font-family: sans-serif;
+	      color: #1a1a1a;
+	      margin: 0;
+	      padding: 0;
+	    }
 
-    main {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 20px;
-      justify-content: flex-start;
-      margin: 10px 0; 
-      padding: 0 20px;
-    }
+	    main {
+	      display: grid;
+	      grid-template-columns: 1fr 1fr;
+	      grid-column-gap: 20px;
+	      justify-content: flex-start;
+	      margin: 10px 0; 
+	      padding: 0 20px;
+	    }
 
-    .right-column {
-      text-align: center;
-      /* background-color: rgba(50,50,50,0.5); */
-      /* padding: 10px; */
-    }
+	    .right-column {
+	      text-align: center;
+	      /* background-color: rgba(50,50,50,0.5); */
+	      /* padding: 10px; */
+	    }
 
-    .draggables {
-      height: 100%;
-      text-align: left;
-      padding-top: 2px; /* shouldnt be necessary but it looks off without it */
-    }
-    
-    .draggables .draggable {
-      display: inline-block;
-      margin-right: 10px;
-      margin-bottom: 10px;
-    }
+	    .draggables {
+	      height: 100%;
+	      text-align: left;
+	      padding-top: 2px; /* shouldnt be necessary but it looks off without it */
+	    }
+	    
+	    .draggables .draggable {
+	      display: inline-block;
+	      margin-right: 10px;
+	      margin-bottom: 10px;
+	    }
 
-    .draggable {
-      width: 75px;
-      height: 75px;
-      cursor: grab;
-      background-size: cover;
-      margin-right: 5px;
-    }
+	    .draggable {
+	      width: 75px;
+	      height: 75px;
+	      cursor: grab;
+	      background-size: cover;
+	      margin-right: 5px;
+	    }
 
-    .draggable.dragging, 
-    .draggable.dragging:active {
-      cursor: -webkit-grabbing;
-      cursor: -moz-grabbing;
-      cursor: -o-grabbing;
-      cursor: -ms-grabbing;
-      cursor: grabbing;
-    }
+	    .draggable.dragging, 
+	    .draggable.dragging:active {
+	      cursor: -webkit-grabbing;
+	      cursor: -moz-grabbing;
+	      cursor: -o-grabbing;
+	      cursor: -ms-grabbing;
+	      cursor: grabbing;
+	    }
 
-    .tier-list {
-      display: grid;
-      grid-template-rows: auto;
-      grid-gap: 10px;
-      flex-direction: column;
-      /* background-color: #1a1a1a; */
-    }
+	    .tier-list {
+	      display: grid;
+	      grid-template-rows: auto;
+	      grid-gap: 10px;
+	      flex-direction: column;
+	      /* background-color: #1a1a1a; */
+	    }
 
-    .tier-row {
-      display: flex;
-      width: 100%;
-      font-size: 20px;
-      background-color: black;
-    }
+	    .tier-row {
+	      display: flex;
+	      width: 100%;
+	      font-size: 20px;
+	      background-color: black;
+	    }
 
-    .tier-row .dropzone {
-      min-height: 75px; /* should be as tall as the draggable items*/
-      display: flex;
-      flex-wrap: wrap;
-      /* position: relative; */
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-    
-    .isdragging .dropzone {
-      box-shadow: 0 0 2px rgba(250,220,0, 0.2);
-    }
-    
-    .tier-row .tier {
-      margin-right: 5px;
-      background-color: #ff7f7f;
-      position: relative;
-      width: 75px;
-      flex-shrink: 0;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    .tier-row .tier-s {
-      background-color: #ff7f7f;
-    }
-    .tier-row .tier-a {
-      background-color: #ffbf7f;
-    }
-    .tier-row .tier-b {
-      background-color: #ffff7f;
-    }
-    .tier-row .tier-c {
-      background-color: #7fff7f;
-    }
-    .tier-row .tier-d {
-      background-color: #7ebfff;
-    }
-    .tier-row .tier-e {
-      background-color: #807FFF;
-    }
-    .tier-row .tier-f {
-      background-color: #ff7fff;
-    }
+	    .tier-row .dropzone {
+	      min-height: 75px; /* should be as tall as the draggable items*/
+	      display: flex;
+	      flex-wrap: wrap;
+	      /* position: relative; */
+	      width: 100%;
+	      transition: background-color 0.3s ease;
+	    }
+	    
+	    .isdragging .dropzone {
+	      box-shadow: 0 0 2px rgba(250,220,0, 0.2);
+	    }
+	    
+	    .tier-row .tier {
+	      margin-right: 5px;
+	      background-color: #ff7f7f;
+	      position: relative;
+	      width: 75px;
+	      flex-shrink: 0;
+	      display: flex;
+	      justify-content: center;
+	      flex-direction: column;
+	      text-align: center;
+	    }
+	    .tier-row .tier-s {
+	      background-color: #ff7f7f;
+	    }
+	    .tier-row .tier-a {
+	      background-color: #ffbf7f;
+	    }
+	    .tier-row .tier-b {
+	      background-color: #ffff7f;
+	    }
+	    .tier-row .tier-c {
+	      background-color: #7fff7f;
+	    }
+	    .tier-row .tier-d {
+	      background-color: #7ebfff;
+	    }
+	    .tier-row .tier-e {
+	      background-color: #807FFF;
+	    }
+	    .tier-row .tier-f {
+	      background-color: #ff7fff;
+	    }
 
-    footer {
-      width: 100vw;
-      padding: 10px;
-      margin-top: 10px;
-      text-align: center;
-      color: #eee;
-    }
-  </style>
+	    footer {
+	      padding: 10px;
+	      margin-top: 10px;
+	      text-align: center;
+	      color: #eee;
+	    }
+	  </style>
 
   <body>
     
