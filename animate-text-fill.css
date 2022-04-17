@@ -19,6 +19,6 @@
   transition: 0.5s linear;
 }
 
-.flexy:hover .filled-text {
+.card:hover .filled-text {
   background-size: 100%;
 }
