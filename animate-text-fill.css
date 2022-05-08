@@ -1,22 +1,25 @@
 .filled-text {
-  padding: 6px 0;
-  --fill-color: #198CE6;
+  --fill-color: #7db6e2;
   position: relative;
   display: block;
   padding: 4px 0;
   font-family: Raleway, sans-serif;
   font-weight: 700;
   text-decoration: none;
-  text-transform: uppercase;
-  -webkit-text-stroke: 2px var(--fill-color);
-  background: linear-gradient(90deg, var(--fill-color) 0%, var(--fill-color) 100%);
-  background-size: 0;
-  background-position: left;
+  -webkit-text-stroke: 2px #198CE6;
+  /* The animation direction is mainly influenced by background-position, the degree does not matter
+    * bottom = start from center, moving towards edges
+    * top = same as 'bottom' but seems laggier
+    * left or right = start from that edge 
+  */
+  background: linear-gradient(0deg, var(--fill-color) 0%, var(--fill-color) 100%);
+  background-position: bottom;
   background-repeat: no-repeat;
+  background-size: 0;
   color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
-  transition: 0.5s linear;
+  transition: 0.4s linear;
 }
 
 .card:hover .filled-text {

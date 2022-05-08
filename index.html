@@ -12,22 +12,29 @@
 	<link rel="stylesheet" href="animate-text-fill.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@400;700&family=Source+Sans+Pro&display=swap"
+		rel="stylesheet">
+
 
 	<title>hagge.se - projects</title>
 	<style>
-		@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-
-		a, a:link {
-			text-decoration: none; 
+		a,
+		a:link {
+			text-decoration: none;
 		}
 
 		body {
 			background-color: whitesmoke;
-			font-family: monospace;
+			font-family: 'Source Sans Pro', monospace;
 			margin: 0;
 			padding: 5px 30px 30px;
 			font-size: 20px;
+		}
+
+		footer {
+			text-align: center;
+			padding: 20px;
 		}
 
 		header {
@@ -38,21 +45,51 @@
 		h1,
 		h2,
 		h3 {
-			font-family: "Raleway", monospace;
 			font-weight: normal;
 			letter-spacing: 0.7px;
+			font-family: "Playfair Display";
 		}
 
 		#main-header h1 {
-			font-family: "Arvo";
+			font-family: "Playfair Display";
 			font-weight: 700;
 		}
 
 		.grid {
 			display: grid;
-			grid-gap: 30px;
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-			grid-template-columns: repeat(1fr);
+			grid-gap: 10px;
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media screen and (min-width: 900px) {
+			.grid {
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-gap: 30px;
+			}
+
+			.card {
+				transition: transform;
+				transform-style: preserve-3d;
+				transition: all ease 0.4s;
+			}
+
+			.card:nth-child(1n):hover {
+				transform: perspective(75em) rotateY(10deg);
+				box-shadow:
+					rgba(22, 31, 39, 0.42) 0px -60px -60px -25px,
+					rgba(19, 26, 32, 0.08) 0px -35px -75px -25px;
+			}
+
+			.card:nth-child(3n-1):hover {
+				transform: perspective(75em) rotateX(-8deg);
+				box-shadow: 2px 2px 14px rgb(10 10 10 / 40%)
+			}
+
+			.card:nth-child(3n):hover {
+				transform: perspective(75em) rotateY(-10deg);
+				box-shadow:
+				rgb(22 31 39 / 42%) -4px -3px 60px -25px, rgb(19 26 32 / 8%) 0px 35px 75px -35px
+			}
 		}
 
 		.card {
@@ -64,7 +101,7 @@
 			box-shadow: 0px 0px 14px rgb(10 10 10 / 30%);
 			font-size: 15px;
 			color: #222;
-			border-radius: 10%;
+			border-radius: 2%;
 		}
 
 		.card * {
@@ -77,7 +114,7 @@
 			color: lightblue;
 			font-size: 20px;
 		}
-		
+
 		.card h2 {
 			font-size: 40px;
 		}
@@ -121,7 +158,7 @@
 			<h2><span class="icon">🧩</span> <span class="filled-text"> Sudoku</span></h2>
 			<p>Mobile friendly sudoku</p>
 		</a>
-		
+
 		<a class="card" target="_blank" rel="nofollow" href="https://statuscode.netlify.app/">
 			<h2><span class="icon">💻</span> <span class="filled-text"> HTTP Status Codes</span></h2>
 			<p>In case you forgot what 503 means</p>
@@ -129,10 +166,10 @@
 
 		<a target="_blank" class="card" href="https://moviecharts.herokuapp.com/">
 			<h2><span class="icon">🎞️</span> <span class="filled-text"> Movie scores</span></h2>
-			<p>Bar charts of scores for current movies</p>
+			<p>Ratings for current movies presented as bar chart</p>
 		</a>
 
-		
+
 		<a class="card" href="https://purple-node-rss.herokuapp.com/">
 			<h2><span class="icon">🗞️</span> <span class="filled-text"> RSS News</span></h2>
 			<p>Simple in-browser RSS-reader</p>
@@ -145,10 +182,10 @@
 
 		<a class="card" href="https://80s.netlify.com/">
 			<h2><span class="icon">🕺🏻</span> <span class="filled-text"> 80s giforama </span></h2>
-			<p>Plays an 80s song while funky gifs are displayed in the background</p>
+			<p>80's GIF style music video</p>
 		</a>
 
-		
+
 		<a class="card" href="https://auto-hackertype.netlify.com/">
 			<h2><span class="icon">⌨️</span> <span class="filled-text"> Hacker-type</span></h2>
 			<p>Pretend like you can write code really fast</p>
@@ -164,13 +201,13 @@
 			<p>Basic snake game (desktop only)</p>
 		</a> -->
 
-		
+
 		<!-- <a class="card" href="https://simple-news.herokuapp.com/">
 			<h2><span class="icon">📰</span> <span class="filled-text"> Newsfeed</span></h2>
 			<p>A simple news feed aggregate</p>
 		</a> -->
 
-	<!-- 
+		<!-- 
 		<a class="card" href="https://talkingheads.netlify.com/">
 			<h2><span class="icon">🎤</span> <span class="filled-text"> Lyrics presenter</span></h2>
 			<p>Lyrics sing along</p>
@@ -196,33 +233,8 @@
 	</main>
 
 	<footer>
+		ⓒ Hagge
 	</footer>
-
-	<script>
-		const h1 = document.querySelector("h1");
-		let percent = 40;
-		const MAX = 75;
-		const MIN = 40;
-		let direction = "up";
-		window.setInterval(() => {
-			console.log(percent);
-
-			if (percent > MAX) {
-				direction = "down";
-			} 
-			else if (percent < MIN) {
-				direction = "up";
-			} 
-
-			if (direction === "up") {
-				percent++
-			} else {
-				percent--;
-			}
-
-			h1.style.backgroundSize = `${percent}%`;
-		}, 300);
-	</script>
 
 </body>
 
