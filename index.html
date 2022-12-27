@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>hagge.se - projects</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -15,9 +15,6 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@400;700&family=Source+Sans+Pro&display=swap"
 		rel="stylesheet">
-
-
-	<title>hagge.se - projects</title>
 	<style>
 		a,
 		a:link {
@@ -147,12 +144,20 @@
 </head>
 
 <body>
+    <!-- GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0YDVS7PGM"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Z0YDVS7PGM');
+    </script>
 	<header id="main-header">
 		<h1>Hagge.se</h1>
 	</header>
 
 	<main class="grid">
-
 		<a class="card" target="_blank" rel="nofollow" href="https://local-beers.up.railway.app/">
 			<h2><span class="icon">🍺</span> <span class="project-title"> Beer release tracker</span></h2>
 			<p>Lists newly released beers at your closest Systembolaget store</p>
@@ -251,5 +256,4 @@
 	</footer>
 
 </body>
-
 </html>
