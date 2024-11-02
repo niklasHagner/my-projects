@@ -12,20 +12,28 @@
 	<link rel="stylesheet" href="animate-text-fill.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@400;700&family=Source+Sans+Pro&display=swap"
-		rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 	<style>
+    @font-face { font-family: 'BoycotRancoExtrude'; src: url('fonts/BoycotRancoExtrude.otf') format('opentype'); }
+
+    :root {
+      --body-bg: #124E78;
+      --card-shadow: #0b2f49;
+      --body-color: #F0F0C9;
+      --card-title-bg: #D74E09;
+      --card-body-bg: #F2BB05; 
+    }
+
 		a,
 		a:link {
 			text-decoration: none;
 		}
 
 		body {
-			background: #614dae;
+			background: var(--body-bg);
       padding: 1em;
-      font-family: Consolas, monospace;
-      color: #eee;
+      font-family: "Space Mono", monospace;
+      color: var(--body-color);
       font-size: 1em;
       line-height: 1;
       letter-spacing: 0.125em;
@@ -48,10 +56,10 @@
 		}
 
 		#main-header h1 {
+      font-family: 'BoycotRancoExtrude', monospace;
 			font-weight: 700;
       font-size: 4em;
-      background-color: lightblue;
-      color: black;
+      color: white;
       padding-bottom: 10px;
 		}
 
@@ -85,13 +93,15 @@
     
 		.card h2 {
 			font-size: 3em;
-      background-color: gold;
+      background-color: var(--card-title-bg);
+      font-weight: 700;
+      color: white;
       padding-right: 40px;
 			letter-spacing: 0.7px;
 		}
 
     .card p {
-      background-color: pink;
+      background-color: var(--card-body-bg);
       font-size: 1.5em;
     }
 
@@ -121,26 +131,11 @@
 			.card {
 				transition: transform;
 				transform-style: preserve-3d;
-				transition: all ease 0.4s;
-			}
+				transition: all ease 0.13s;
 
-			.card:nth-child(1n):hover {
-				transform: perspective(75em) rotateY(20deg);
-				box-shadow: rgba(22, 31, 39, 0.42) 0px -60px -60px -25px, rgba(19, 26, 32, 0.08) 0px -35px -75px -25px;
-				box-shadow: -5px -6px 14px rgb(10 10 10 / 40%);
-				/* text-shadow: -1px -1px purple; */
-			}
-
-			.card:nth-child(3n-1):hover {
-				transform: perspective(75em) rotateX(-14deg);
-				box-shadow: -1px 4px 14px rgb(10 10 10 / 40%);
-			  /* text-shadow: 1px 1px purple; */
-			}
-
-			.card:nth-child(3n):hover {
-				transform: perspective(75em) rotateY(-20deg);
-				box-shadow: 8px -6px 14px rgb(10 10 10 / 40%);
-			  /* text-shadow: 1px 1px purple; */
+        &:hover {
+          box-shadow: 15px 15px 0px var(--card-shadow);
+        }
 			}
 		}    
 
