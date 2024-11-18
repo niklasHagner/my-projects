@@ -17,11 +17,14 @@
     @font-face { font-family: 'BoycotRancoExtrude'; src: url('fonts/BoycotRancoExtrude.otf') format('opentype'); }
 
     :root {
-      --body-bg: #124E78;
-      --card-shadow: #0b2f49;
+      --body-bg: linear-gradient(270deg, #E8488A 0%, #D5304B 100%);
+      --card-title-gradient: linear-gradient(60deg, #f5425cf7 0%, #ff91e1 100%);
+      --card-title-gradient-hover: linear-gradient(60deg, #dc697af7 50%, #a8388a 100%);
+      --card-shadow: #092940;
       --body-color: #F0F0C9;
-      --card-title-bg: #D74E09;
-      --card-body-bg: #F2BB05; 
+      --card-title-bg: #124E78;
+      --card-title-bg-hover: #145482;
+      --card-body-bg: #0f4368; 
     }
 
 		a,
@@ -61,11 +64,19 @@
       font-size: 4em;
       color: white;
       padding-bottom: 10px;
+      background: linear-gradient(60deg, #fbfbfbf7 0%, #ff91e1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: #0000;
+      -webkit-box-decoration-break: clone;
+      padding: 10px;
 		}
 
-		.grid {
-			display: grid;
-			grid-gap: 10px;
+
+    .card,
+		a,
+		a:visited {
+      color: #222;
 		}
 
 		.card {
@@ -76,45 +87,56 @@
 			font-size: 15px;
 			background-color: white;
       position: relative;
-		}
+      box-shadow: 1px 1px 0px 0px var(--card-shadow), 2px 2px 0px 0px var(--card-shadow), 3px 3px 0px 0px var(--card-shadow), 4px 4px 0px 0px var(--card-shadow), 5px 5px 0px 0px var(--card-shadow), 6px 6px 0px 0px var(--card-shadow), 7px 7px 0px 0px var(--card-shadow), 8px 8px 0px 0px var(--card-shadow);
 
-    .card,
-		a,
-		a:visited {
-      color: #222;
-		}
+      p, 
+      h2 {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+      }
 
-		.card p,
-    .card h2 {
-			width: 100%;
-      padding: 10px;
-      margin: 0;
+      h2 {
+        font-size: 3em;
+        background: var(--card-title-bg);
+        font-weight: 700;
+        color: white;
+        padding-right: 40px;
+        letter-spacing: 0.7px;
+        text-align: center;
+
+        .project-title {
+          background: var(--card-title-gradient);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: #0000;
+          -webkit-box-decoration-break: clone;
+        }
+      }
+
+      p {
+        background: var(--card-body-bg);
+        font-size: 1.5em;
+        color: white;
+      }
+
+      .icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
 		}
     
-		.card h2 {
-			font-size: 3em;
-      background-color: var(--card-title-bg);
-      font-weight: 700;
-      color: white;
-      padding-right: 40px;
-			letter-spacing: 0.7px;
+		.grid {
+			display: grid;
+			grid-gap: 10px;
 		}
-
-    .card p {
-      background-color: var(--card-body-bg);
-      font-size: 1.5em;
-    }
-
-    .card .icon {
-      position: absolute;
-      top: 5px;
-      right: 5px;
-    }
-
-    .card img {
-      max-width: 100%;
-    }
-
+    
 		@media screen and (min-width: 600px) {
 			.grid {
 				grid-template-columns: 1fr 1fr;
@@ -135,6 +157,10 @@
 
         &:hover {
           box-shadow: 15px 15px 0px var(--card-shadow);
+          /* --card-title-bg: var(--card-title-bg-hover); */
+          /* --card-body-bg: var(--card-title-bg-hover); */
+          --card-shadow: #222;
+          --card-title-gradient: var(--card-title-gradient-hover);
         }
 			}
 		}    
@@ -264,7 +290,7 @@
 		</a>
 
     <a class="card" target="_blank" href="https://kassett.netlify.app">
-			<h2><span class="icon">⌨️</span> <span class="project-title"> Music player </span></h2>
+			<h2><span class="icon">📼</span> <span class="project-title"> Music player </span></h2>
       <img src="./img/kassett.gif">
 			<p>Web radio & music visualizer</p>
 		</a>
