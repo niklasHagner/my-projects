@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://niklas-aria.netlify.app/ -->
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Vintips</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet">
+    <style>
+      :root {
+        --main-color: #f0f0f0;
+        --main-background: #1e1e2f;
+        --footer-background: #282a36;
+        --accent-color: #ff79c6;
+        --button-background: linear-gradient(270deg, #ff79c6 0%, #bd93f9 100%);
+        --button-hover-background: linear-gradient(270deg, #bd93f9 0%, #ff79c6 100%);
+        --button-shadow: rgba(0, 0, 0, 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      .footer {
+        flex-shrink: 0;
+      }
+
+      body {
+        background-color: var(--main-background);
+        color: var(--main-color);
+        margin: 0;
+        padding-top: 20px 20px 0 20px;
+        font-family: "Poppins", serif;
+
+        /*Sticky footer*/
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .site-header h1 {
+        font-family: "Abril Fatface", serif;
+        text-shadow: 2px 2px rgb(197, 15, 15);
+        color: rgb(253, 242, 37);
+        font-size: 2.5rem;
+      }
+
+      .chapter-header {
+        font-family: "Abril Fatface", serif;
+        font-size: 2rem;
+      }
+
+
+
+      .main-site-container {
+        flex: 1 0 auto;
+        margin: auto;
+        max-width: 700px;
+      }
+
+      .site-footer {
+        padding: 20px;
+        text-align: center;
+        background-color: var(--footer-background);
+      }
+
+      .button--apricot {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 8px;
+        padding: 16px 38px 14px;
+        border-radius: 28px;
+        background: linear-gradient(270deg, #E8488A 0%, #D5304B 100%);
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Sora', sans-serif;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+
+        &:hover {
+          background: linear-gradient(270deg, #D42F4A 0%, #F82BBF 100%);
+        }
+      }
+
+      .button--shadowed {
+        height: 48px;
+        border: 1px solid black;
+        appearance: none;
+        background-color: #ee82ee;
+        letter-spacing: .5px;
+        font-size: 16px;
+        font-family: "Archivo", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        padding-left: 24px;
+        padding-right: 24px;
+        border-radius: 4px;
+        cursor: url('https://boostie.com/wp-content/uploads/2024/02/pointer-e1708536933479.png'), pointer;
+        position: relative;
+        transition: background-color linear .1s;
+        margin-bottom: 24px;
+
+        &:after {
+          content: "";
+          background-color: black;
+          left: 0;
+          top: 0;
+          transform: translate(2px, 2px);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          z-index: -1;
+          border-radius: 4px;
+          border: 1px solid black;
+        }
+
+        &:hover {
+          background-color: #d675d6;
+          left: 1px;
+          top: 1px;
+
+          &:after {
+            transform: translate(1px, 1px);
+          }
+        }
+
+        &:active {
+          background-color: #be68be;
+          left: 2px;
+          top: 2px;
+
+          &:after {
+            transform: translate(0px, 0px);
+          }
+        }
+      }
+
+      main {
+        padding: 10px;
+      }
+
+      .product {
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        /* clearfix */
+      }
+
+      .product img {
+        float: left;
+        max-height: 300px;
+        padding-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main-site-container">
+      <header class="site-header">
+        <h1>Vintips</h1>
+      </header>
+      <section>
+
+        <div id="vinlistor">
+
+          <h2 class="chapter-header">Vitt vin 100-139kr</h2>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/37096394/37096394_400.png?q=75&w=2000">
+            <h2>Saint Mont - Les Cépages Préservés, 2022 </h2>
+            <p>Land: Frankrike sydväst
+              Saint-Mont</p>
+            <p>Nr 2448</p>
+            <p>När det här vinet lanserades i december 2023 blev det snabbt kritikerrosat bland de svenska
+              vinskribenterna. Många hade med det på sina listor över mest prisvärda vita vinerna. Även vi blev lite
+              tagna på sängen av att ett vin med årgång 2020 på sig lanserades i Sverige för blygsamma 99 kronor. I det
+              här vinet får du en något utvecklad men fortsatt aromatisk ton där du kommer mötas av en liten fatkänsla,
+              vit persika, gula päron, vita blommor och en lätt nötighet. Det här är lite fylligare men ändå fräscht och
+              imponerande. Välgjort, prisvärt och ett dunderköp! </p>
+            <p>99kr, Sektion 11, Hylla 07</p>
+          </div>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/23844692/23844692_400.webp?q=75&w=2000">
+            <h2>Villa Wolf - Grauburgunder</h2>
+            <p>Land: Tyskland, Pfalz</p>
+            <p>Nr 2164</p>
+            <p>Grauburgunder, eller pinot gris om man så vill, får nästan alltid stå i skuggan av riesling i Tyskland.
+              Men det här vinet visar verkligen varför druvan förtjänar mer uppmärksamhet. Här får vi ett ungt, piggt,
+              charmigt och fruktigt vin med en aromatisk och något spritsig känsla i munnen. Det är massvis av läskande
+              päronsplitt med en fräsch medelhög syrlighet. Somrigt, läskande och riktigt gott. </p>
+            <p>105kr, Sektion 08, Hylla 05</p>
+          </div>
+
+
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/12892417/12892417_400.webp?q=75&w=2000">
+            <h2>Gérard Bertrand</h2>
+            <p>Land: Frankrike</p>
+            <p>Nr 79175</p>
+            <p>Fruktig, ungdomlig, mycket frisk smak med inslag av päron, färska örter, honungsmelon, persika och
+              citron. Serveras vid 8-10°C till rätter av fisk eller skaldjur, eller till vegetariska rätter. </p>
+            <p>119kr, Sektion 11, hylla 09</p>
+          </div>
+
+
+          <h2 class="chapter-header">Rödvin 80-139kr</h2>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/7209/7209_400.png?q=75&w=2000">
+            <h2>Bianchi Montepulciano d'Abruzzo - Umani Ronchi, 2023 </h2>
+            <p>Land: Södra Italien, Abruzzerna</p>
+            <p>Nr 7126</p>
+            <p>Ett vin som bör kosta en bit mer än vad det gör i dag. Detta är ett klockrent exempel på att regionen
+              Abruzzo i hjärtat av Italien kan leverera otroligt imponerande viner för en blygsam peng. Här får du
+              väldigt mycket Montepulciano-drag där de syrliga fräscha körsbären kommer fram direkt i doften. Detta är
+              ett fräscht och fruktigt vin som drar mer åt det rödfruktiga hållet. Här kommer även färska örter,
+              vildhallon och en diskret avslutning av viol fram. Servera till en pasta pomodoro. </p>
+            <p>89kr, Sektion 11, hylla 09</p>
+          </div>
+
+          <h2 class="chapter-header">Rödvin 140–199 kr</h2>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/243594/243594_400.webp?q=75&w=2000">
+            <h2>Château Bouscassé</h2>
+            <p>Land: Frankrike</p>
+            <p>Nr 2204</p>
+            <p>Toppårgång. Nyligen utsett till Årets Röda vin. Ett klassiskt franskt vin som bjuder på generös frukt, integrerad fatkaraktär och balanserad eftersmak. Tannat 50%, Cabernet Sauvignon 26%, Cabernet Franc 24%
+            </p>
+            <p>188kr, Sektion 02, hylla 08</p>
+          </div>
+
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/24405778/24405778_400.webp?q=75&w=2000">
+            <h2>Col d'Orcia Rosso di Montalcino 2020</h2>
+            <p>Land: Italien, Toscana</p>
+            <p>Nr 2576</p>
+            <p> Rött ekologiskt vin nyanserat med fattoner. Sangiovese.</p>
+            <p>179kr, Sektion 03, hylla 08</p>
+
+          </div>
+
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/634253/634253_400.webp?q=75&w=2000">
+            <h2>Poliziano Vino Nobile di Montepulciano Viti Nuove</h2>
+            <p>Land: Italien</p>
+            <p>Nr 2144</p>
+            <p>Toscana, med högsta klassificeringen: DOCG</p>
+            <p>189kr, Sektion 03, hylla 09</p>
+
+          </div>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/1624/1624_400.webp?q=75&w=2000">
+            <h2>Villa Antinori</h2>
+            <p>Land: Italien, Toscana</p>
+            <p>Nr 2300</p>
+            <p>Perfekt balanserat. Från klassiskt vinhus anno 1385. 15% merlot, 5% syrah, 60% sangiovese, 20% cabernet sauvignon</p>
+            <p>179kr, Sektion 03, hylla 08</p>
+
+          </div>
+          <div class="product">
+            <img src="https://product-cdn.systembolaget.se/productimages/501905/501905_400.webp?q=75&w=2000">
+            <h2>Quara Single Vineyard Malbec 2020</h2>
+            <p>Land: Argentina</p>
+            <p>Nr 6551</p>
+            <p>Vankas det kött på grillen så korkar jag gärna upp en malbec som den här fyndpannan till exempel. Doft och smak av körsbär, mörka plommon, fat, krydda och lakrits.”
+
+              – Anders Melldén, SvD, 2022</p>
+            <p>165kr, Sektion 01, hylla 02</p>
+
+          </div>
+
+          <!-- <div class="product">
+              <h2>Noble Vines 667 Pinot Noir</h2>
+              <p>Land: USA</p>
+              <p>Nr 6611</p>
+            </div>
+            <div class="product">
+              <h2>Heinrich Pinot Noir</h2>
+              <p>Land: Österrike</p>
+              <p>Nr 20110</p>
+              <p>God Pinot noir-nyhet från Österrike</p>
+            </div>
+            <div class="product">
+              <h2>Zenato Valpolicella Classico Superiore</h2>
+              <p>Land: Italien</p>
+              <p>Nr 12385</p>
+              <p>Medelfylligt rött vin med fatkaraktär. Hyllad vinproducent.</p>
+            </div>
+            <div class="product">
+              <h2>Belleruche Côtes-du-Rhône Chapoutier</h2>
+              <p>Land: Frankrike</p>
+              <p>Nr 75764</p>
+              <p>Fint ekologiskt vin av Chapoutier, hyllad producent i&nbsp;Rhône.</p>
+            </div>
+            <div class="product">
+              <h2>Glenelly Estate Glass Collection Syrah</h2>
+              <p>Land: Sydafrika</p>
+              <p>Nr 2473</p>
+              <p>&nbsp;Känd Bordeuax-producent i Stellenbosch</p>
+            </div>
+            <div class="product">
+              <h2>Brolio Chianti Classico</h2>
+              <p>Land: Italien</p>
+              <p>Nr 2705</p>
+              <p>Av vinhuset Ricasoli anno 1141. Högsta klassen DOCG.</p>
+            </div>
+            <div class="product">
+              <h2>La Planta Reserva</h2>
+              <p>Land: Spanien</p>
+              <p>Nr 2544</p>
+              <p>Ribera del Duero: Perfekt balanserad, lågt pris.</p>
+            </div>
+            <div class="product">
+              <h2>Borgogno Barbera d'Alba Superiore</h2>
+              <p>Land: Italien</p>
+              <p>Nr 72401</p>
+            </div>
+            <div class="product">
+              <h2>The Butcher Pinot Noir</h2>
+              <p>Land: Österrike</p>
+              <p>Nr 70521</p>
+              <p>Pinot noir från Österrike.</p>
+            </div>
+            <div class="product">
+              <h2>Istine Chianti Classico</h2>
+              <p>Land: Italien</p>
+              <p>Nr 2309</p>
+            </div>
+            <div class="product">
+              <h2>DeAetna DOC Etna</h2>
+              <p>Land: Italien</p>
+              <p>Nr 2400</p>
+              <p>Ekologiskt rött vin från Sicilien.</p>
+            </div>
+            <div class="product">
+              <h2>Krugscher Hof Pinot Noir</h2>
+              <p>Land: Tyskland</p>
+              <p>Nr 22388</p>
+              <p>Pinot noir med höga betyg:Krugscher Hof. Vinbetyget</p>
+            </div>
+            <div class="product">
+              <h2>Morgon Beaujolais Cru</h2>
+              <p>Land: Frankrike</p>
+              <p>Nr 5106</p>
+              <p>Mjukt, ungt och bärigt rött vin, Beaujolais Cru, Bourgogne.</p>
+            </div>
+            <div class="product">
+              <h2>Château Pierre de Montignac Médoc Cru Bourgeois</h2>
+              <p>Land: Frankrike</p>
+              <p>Nr 2593</p>
+            </div> -->
+
+      </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+      <p>&copy; 2025 by Hagge</p>
+    </footer>
+
+    <script type="text/javascript">
+      function main() {
+        console.log("starting");
+      }
+      document.addEventListener("DOMContentLoaded", main, false);
+    </script>
+
+
+  </body>
+
+</html>
