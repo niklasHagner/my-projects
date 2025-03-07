@@ -180,12 +180,18 @@
         position: relative;
         overflow: hidden;
         /* clearfix */
-      }
 
-      .product img {
-        float: left;
-        max-height: 300px;
-        padding-right: 10px;
+        @media (max-width: 500px) {
+          h2 {
+            font-size: 18px;
+          }
+        }
+
+        img {
+          float: left;
+          max-height: 300px;
+          padding-right: 10px;
+        }
       }
     </style>
   </head>
